@@ -1,8 +1,17 @@
 body {
   box-sizing: border-box;
+  text-align: center;
 }
 
-h1 {
-  text-align: center;
+button {
+  padding: 10px 20px;
+  background-color: #93DAA6;
+  color: #fff;
+  border: 1px solid #93DAA3;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #000;
 }
 /*# sourceMappingURL=style.prefixed.css.map */

@@ -1,6 +1,14 @@
 body {
     box-sizing: border-box;
-}
-h1 {
     text-align: center;
+}
+button {
+    padding: 10px 20px;
+    background-color: #93DAA6;
+    color: #fff;
+    border: 1px solid #93DAA3;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
 }
