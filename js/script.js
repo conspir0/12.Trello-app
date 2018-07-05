@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function(){
         return element;
     }
     
-    //Class Column
+    // Class Column
     function Column(name) {
         var self = this;
         
@@ -45,4 +45,13 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
     
+    // Methods for Class Column
+    Column.prototype = {
+        addCard: function(card) {
+            this.element.querySelector('ul').appendChild(card.element);
+        },
+        removeColumn: function() {
+            this.element.parentNode.removeChild(this.element);
+        }
+    };
 });
