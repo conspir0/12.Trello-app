@@ -1,3 +1,4 @@
+
 'use strict';
 
 // Code will be working after loaded DOM
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
         var str = '';
-        
+    
         for (var i = 0; i < 10; i++) {
             str += chars[Math.floor(Math.random() * chars.length)];
         }
@@ -33,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function(){
         this.id = randomString();
         this.name = name;
         this.element = generateTemplate('column-template', {
-            name: this.name
+            name: this.name,
+            id: this.id
         });
         
         this.element.querySelector('.column').addEventListener('click', function(event) {
@@ -102,8 +104,27 @@ document.addEventListener('DOMContentLoaded', function(){
     
     //
     document.querySelector('#board .create-column').addEventListener('click', function() {
-        var name = prompt.('Enter a column name');
+        var name = prompt('Enter a column name');
         var column = new Column(name);
         board.addColumn(column);
     });
+    
+    // Create Columns
+    var todoColumn = new Column('To do');
+    var doingColumn = new Column('Doing');
+    var doneColumn = new Column('Done');
+    
+    // Add Columns to the Board
+    board.addColumn(todoColumn);
+    board.addColumn(doingColumn);
+    board.addColumn(doneColumn);
+    
+    // Create Cards
+    var card1 = new Card('New Task');
+    var card2 = new Card('Create kanaban boards');
+    
+    // Add Cards to Columns
+    todoColumn.addCard(card1);
+    doingColumn.addCard(card2);
+
 });
