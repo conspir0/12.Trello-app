@@ -25,4 +25,24 @@ document.addEventListener('DOMContentLoaded', function(){
         
         return element;
     }
+    
+    //Class Column
+    function Column(name) {
+        var self = this;
+        
+        this.id = randomString();
+        this.name = name;
+        this.element = generateTemplate('column-template', {
+            name: this.name
+        });
+        this.element.querySelector('.column').addEventListener('click', function(event) {
+            if (event.target.classList.contains('btn-delete')) {
+                self.removeColumn();
+            }
+            if (event.target.classList.contains('add-card')) {
+                self.addCard(new Card(prompt('Enter the name of the card')));
+            }
+        });
+    }
+    
 });
