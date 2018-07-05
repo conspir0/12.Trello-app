@@ -74,4 +74,10 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
     
+    //Method for Class Card
+    Card.prototype = {
+        removeCard: function() {
+            this.element.parentNode.removeChild(this.element);
+        }
+    }
 });
