@@ -80,4 +80,30 @@ document.addEventListener('DOMContentLoaded', function(){
             this.element.parentNode.removeChild(this.element);
         }
     }
+    
+    // Object Board
+    var board = {
+        name: 'Kanaban Board',
+        addColumn: function(column) {
+            this.element.appendChild(column.element);
+            initSortable(column.id);
+        },
+        element: document.querySelector('#board .column-container')
+    };
+    
+    // initSortable()
+    function initSortable(id) {
+        var el = document.getElementById(id);
+        var sortable = Sortable.create(el, {
+            group: 'kanaban',
+            sort: true
+        });
+    }
+    
+    //
+    document.querySelector('#board .create-column').addEventListener('click', function() {
+        var name = prompt.('Enter a column name');
+        var column = new Column(name);
+        board.addColumn(column);
+    });
 });
