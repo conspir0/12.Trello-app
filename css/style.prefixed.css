@@ -10,8 +10,10 @@
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   text-align: center;
 }
 
@@ -19,23 +21,10 @@
   margin: 20px;
 }
 
-.board .create-column {
-  position: relative;
-  width: 150px;
-  margin: 10px auto;
-  padding: 5px 20px;
-}
-
-.board div.column-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  padding: 10px;
-}
-
 .board button {
   position: absolute;
+  top: 0;
+  padding: 3px;
   background-color: #FDF2E9;
   border: 1px solid #F7DC6F;
 }
@@ -44,66 +33,66 @@
   background: #F7DC6F;
 }
 
-.board undefined {
-  -ms-flex-pack: center;
-      justify-content: center;
-  width: 33.3%;
-  background-color: #FDF2E9;
-  border-radius: 10px;
-  margin: 10px;
+.board button.create-column {
+  position: relative;
+  width: 150px;
+  padding: 10px 30px;
+  margin: 10px auto;
+}
+
+.board .column-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
+.board .column-container div {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  border: 1px solid #FDF2E9;
   padding: 10px;
+  margin: 0 5px;
+  background-color: #FDF2E9;
 }
 
-.board undefined .column {
+.board .column-container div .column {
   position: relative;
+  padding: 0;
 }
 
-.board undefined .column h2 {
-  margin-top: 20px;
+.board .column-container div .column h2 {
+  margin-top: 30px;
 }
 
-.board undefined .column ul {
+.board .column-container div .column ul {
   list-style-type: none;
+  min-height: 250px;
 }
 
-.board undefined .column ul li .card {
+.board .column-container div .column ul .card {
+  border-radius: 10px;
   position: relative;
+  margin: 10px;
+  min-height: 100px;
   background-color: #F9E79F;
-  margin: 10px 0;
-  min-height: 50px;
-  padding: 5px;
 }
 
-.board undefined .column ul li .card .btn-delete {
+.board .column-container div .column ul .card .btn-delete {
   top: 5px;
   right: 5px;
   background-color: #F9E79F;
 }
 
-.board undefined .column ul li .card .btn-delete:hover {
+.board .column-container div .column ul .card .btn-delete:hover {
   border: 1px solid #000;
 }
 
-.board undefined .column ul li .card p {
-  margin: 25px 0;
-}
-
-.board undefined .column .add-card {
-  top: -20px;
+.board .column-container div .column .add-card {
   left: 0;
-  line-height: 10px;
-  padding: 5px 10px;
 }
 
-.board undefined .column .btn-delete {
-  top: -20px;
+.board .column-container div .column .btn-delete {
   right: 0;
-  line-height: 10px;
-  height: 20px;
-  width: 20px;
-}
-
-.board undefined .column .btn-delete:hover {
-  background-color: #F7DC6F;
 }
 /*# sourceMappingURL=style.prefixed.css.map */

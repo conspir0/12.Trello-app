@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // Generate tamplate
     function generateTemplate(name, data, basicElement) {
         var template = document.getElementById(name).innerHTML;
-        var element = document.createElement(basicElement) || 'div';
+        var element = document.createElement(basicElement || 'div');
         
         Mustache.parse(template);
         element.innerHTML = Mustache.render(template, data);
@@ -43,7 +43,14 @@ document.addEventListener('DOMContentLoaded', function(){
                 self.removeColumn();
             }
             if (event.target.classList.contains('add-card')) {
-                self.addCard(new Card(prompt('Enter the name of the card')));
+                
+                var nameCard = prompt('Eneter the name of the card');
+                
+                if (nameCard == null) {
+                    console.log(nameCard);
+                } else {
+                self.addCard(new Card(nameCard  ));           
+                }
             }
         });
     }
@@ -105,8 +112,12 @@ document.addEventListener('DOMContentLoaded', function(){
     //
     document.querySelector('#board .create-column').addEventListener('click', function() {
         var name = prompt('Enter a column name');
-        var column = new Column(name);
-        board.addColumn(column);
+        
+        if (name === null) {
+        } else {
+            var column = new Column(name);
+            board.addColumn(column);
+        }
     });
     
     // Create Columns
