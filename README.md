@@ -1,5 +1,5 @@
 # Trello
->This application was created to plan daily tasks. Trello is extremely easy to use, so everyone can use it regardless of age. Please, check out!
+>This application has been created to plan daily tasks. Trello is extremely easy to use, so everyone can use it regardless of age. Please, check out!
 
 ## How to use
 * Add and delete columns (button)
